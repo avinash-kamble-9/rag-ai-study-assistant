@@ -1,0 +1,19 @@
+# Core Python Libraries
+pandas
+numpy
+scikit-learn
+joblib
+
+# Audio & Video Processing
+ffmpeg-python
+
+# Speech-to-Text / Transcription (if using Whisper or similar)
+openai-whisper   
+
+# JSON Handling
+json
+
+# LLM & Embeddings (Ollama / OpenAI / Groq)
+requests
+
+
