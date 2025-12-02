@@ -1,93 +1,110 @@
 
+# **RAG AI Study Assistant (Retrieval-Augmented Generation Pipeline)**
 
-
-# **Rag AI Study Assistant (RAG Pipeline)**
-
-A production-grade **Retrieval-Augmented Generation system** designed to convert long-form **videos into an intelligent, searchable AI assistant**.
-This project demonstrates my capability to build **end-to-end LLM pipelines**, architect **RAG systems**, and design **scalable data + AI workflows** used in modern AI products.
+A production-ready **Retrieval-Augmented Generation (RAG)** system that converts long videos into an intelligent, searchable study assistant.
+This project demonstrates a complete end-to-end pipeline for transforming video content into structured, queryable knowledge.
 
 ---
 
-## ⭐ **Why This Project Matters**
+## 📌 **Overview**
 
-This repository showcases the **exact skills companies look for** in AI/ML, Data, and DevOps candidates:
+This repository contains a modular pipeline that processes any educational or training video and enables **AI-powered question-answering** directly from the video’s content.
 
-### ✔ **Full AI System Design**
+### **Pipeline:**
 
-Complete pipeline:
-**Video → Audio → Transcript → Chunking → Embeddings → Vector Search → LLM Answer Generation**
-
-### ✔ **Real RAG Architecture**
-
-Not a demo. A **working, modular, extendable** RAG pipeline ready for API or product integration.
-
-### ✔ **Practical Data Engineering**
-
-Handling:
-
-* Audio & video preprocessing
-* JSON transcript management
-* Large text chunking & metadata
-* Joblib-based vector DB storage
-
-### ✔ **LLM + Embedding Integration**
-
-Built with retrieval pipelines, optimized prompts, and cosine similarity search.
-
-### ✔ **Production-Friendly Codebase**
-
-Clean, short, and modular scripts that can be plugged into:
-
-* APIs (Flask/FastAPI)
-* Internal enterprise pipelines
-* Multi-user EdTech systems
+**Video → Audio → Transcript → Chunking → Embeddings → Vector Search → LLM Answer**
 
 ---
-# How to use this RAG AI Teaching assistant on your own data
-## Step 1 - Collect your videos
-Move all your video files to the videos folder
 
-## Step 2 - Convert to mp3
-Convert all the video files to mp3 by ruunning video_to_mp3
+## 🧠 **Core Features**
 
-## Step 3 - Convert mp3 to json 
-Convert all the mp3 files to json by ruunning mp3_to_json
+### ✔ **Video-to-Audio Conversion**
 
-## Step 4 - Convert the json files to Vectors
-Use the file preprocess_json to convert the json files to a dataframe with Embeddings and save it as a joblib pickle
+Converts MP4 videos into MP3 files using FFmpeg.
 
-## Step 5 - Prompt generation and feeding to LLM
+### ✔ **Speech-to-Text Transcription**
 
-Read the joblib file and load it into the memory. Then create a relevant prompt as per the user query and feed it to the LLM
+Transforms MP3 files into clean JSON transcripts.
+
+### ✔ **Text Chunking + Embeddings**
+
+Breaks transcripts into meaningful chunks and generates dense embeddings using **BGE-M3**.
+
+### ✔ **Vector Search Engine**
+
+Performs cosine similarity search to fetch the most relevant chunks.
+
+### ✔ **LLM Integration**
+
+Retrieved context is used to prompt an LLM (Ollama / OpenAI / Groq).
+
+### ✔ **Fully Modular Scripts**
+
+Each step is implemented separately for easy debugging and production adaptation.
+
 ---
 
-## 🚀 **What You Can Build With This**
+# **How to Use This RAG Pipeline**
 
-This RAG pipeline can transform **any video content** into a smart, contextual AI assistant.
+## **Step 1: Add Your Videos**
 
-Perfect for:
+Place all source videos inside:
 
-### 🏫 **Education**
+```
+/videos
+```
 
-* Personalized study assistant
-* Lecture summarization
-* “Ask your class videos” feature
-* Competitive exam prep bots
+---
 
-### 🏢 **Corporate / Enterprise**
+## **Step 2: Convert Videos → MP3**
 
-* Convert **training videos into searchable AI assistants**
-* Make **meeting recordings queryable**
-* Build **internal knowledge assistants**
-* Improve onboarding with instant answers from training sessions
+```bash
+python video_to_mp3.py
+```
 
-### 🎤 **Content & Media**
+This creates audio files under `/audios`.
 
-* Interview indexing
-* Podcast Q&A bots
-* YouTube video search tools
+---
 
-If it’s a video, this system can **understand it and answer from it**.
+## **Step 3: Convert MP3 → Transcript JSON**
+
+```bash
+python mp3_to_json.py
+```
+
+Outputs structured transcripts under `/jsons`.
+
+---
+
+## **Step 4: Build Vector Store (Embeddings)**
+
+```bash
+python preprocess_json.py
+```
+
+This script performs:
+
+* Text cleaning
+* Chunking
+* Embedding generation
+* Saving embeddings to `embeddings.joblib`
+
+---
+
+## **Step 5: Query the RAG Assistant**
+
+Example:
+
+```python
+import joblib
+
+df = joblib.load("embeddings.joblib")
+
+# Perform vector search + create prompt
+# Send prompt to your LLM API
+```
+
+Your assistant will answer questions strictly based on your video content.
 
 ---
 
@@ -112,92 +129,23 @@ Vector Store (Joblib)
    │
 Relevant Chunks
    │
-   ├── Prompt Engineering
+   ├── Prompt Formation
    │
 Final AI Answer
 ```
-
-This mirrors real-world RAG deployments used in industry.
-
----
-
-## 🔧 **How to Use (Step-by-Step)**
-
-### **1️⃣ Place Your Videos**
-
-Add learning/training videos into:
-
-```
-/videos
-```
-
----
-
-### **2️⃣ Convert Video → MP3**
-
-```bash
-python video_to_mp3.py
-```
-
-Outputs to `/audios`.
-
----
-
-### **3️⃣ Convert MP3 → Transcript JSON**
-
-```bash
-python mp3_to_json.py
-```
-
-Outputs to `/jsons`.
-
----
-
-### **4️⃣ Build Vector Store**
-
-```bash
-python preprocess_json.py
-```
-
-This script:
-
-* Chunks text
-* Generates embeddings
-* Stores vector DB in `embeddings.joblib`
-
----
-
-### **5️⃣ Query the RAG Assistant**
-
-```python
-import joblib
-
-df = joblib.load("embeddings.joblib")
-# Perform vector search + prompt generation
-# Send to your LLM endpoint (Ollama / Groq / OpenAI)
-```
-
-Your assistant now answers from **your own content only**.
 
 ---
 
 ## 🛠️ **Tech Stack**
 
-### **Core**
+### **Languages & Tools**
 
 * Python
 * FFmpeg
-* Pandas, NumPy
-* Scikit-learn (cosine similarity)
-* Embedding Model (BGE-M3 or similar)
-* Local/Cloud LLM (Ollama, Groq, OpenAI, etc.)
-
-### **Highlights**
-
-* Modular structure
-* Vector search pipeline
-* Chunking + embeddings
-* Highly extensible for API deployment
+* Pandas & NumPy
+* scikit-learn (cosine similarity)
+* BGE-M3 embedding model
+* Ollama / OpenAI / Groq LLMs
 
 ---
 
@@ -212,40 +160,21 @@ rag/
 │── video_to_mp3.py
 │── mp3_to_json.py
 │── preprocess_json.py
-│── process_incoming.py   # Core RAG logic
+│── process_incoming.py
 │── requirements.txt
 │── README.md
 ```
 
 ---
 
-## 🔥 **What This Project Demonstrates About Me**
+## 👤 **Author**
 
-### ✔ Strong understanding of LLM + RAG design
+**Avinash Kamble**
+*AI/ML & Cloud Enthusiast*
 
-### ✔ Ability to build end-to-end AI systems from scratch
-
-### ✔ Skill in embeddings, chunking, vector search
-
-### ✔ Clean, production-ready code
-
-### ✔ Real-world functionality that can be deployed immediately
-
-This is the same architectural pattern used in:
-
-* Chatbots
-* Enterprise knowledge search engines
-* Study assistants
-* Video indexing systems
-* Internal training Q&A bots
-
----
-
-**👨‍💻 Author:** *Avinash Kamble*
-
-* 🔗 **LinkedIn:** [https://linkedin.com/in/avinashzz](https://linkedin.com/in/avinashzz)
-* 🐙 **GitHub:** [https://github.com/avinash-kamble-9](https://github.com/avinash-kamble-9)
-* 📧 **Email:** [avinassh116zz@gmail.com](mailto:avinassh116zz@gmail.com)
+* 🔗 LinkedIn: [https://linkedin.com/in/avinashzz](https://linkedin.com/in/avinashzz)
+* 🐙 GitHub: [https://github.com/avinash-kamble-9](https://github.com/avinash-kamble-9)
+* 📧 Email: [avinassh116zz@gmail.com](mailto:avinassh116zz@gmail.com)
 
 ---
 
