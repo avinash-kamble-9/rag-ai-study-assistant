@@ -100,7 +100,7 @@ Final AI Answer
 ---
 ## 🖼️ RAG Pipeline Architecture  
 <p align="center">
-  <img src="assets/Rag_architecture _.png" width="850">
+  <img src="assets/Rag_pipeline_.png" width="850">
 </p>
 
 ---
