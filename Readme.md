@@ -97,6 +97,11 @@ Relevant Chunks
    │
 Final AI Answer
 ```
+---
+## 🖼️ RAG Pipeline Architecture  
+<p align="center">
+  <img src="assets/Rag_architecture _.png" width="850">
+</p>
 
 ---
 
