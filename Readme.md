@@ -44,70 +44,34 @@ Each step is implemented separately for easy debugging and production adaptation
 
 ---
 
-# **How to Use This RAG Pipeline**
 
-## **Step 1: Add Your Videos**
+# 🎥 **Video Sources Used in This Project**
 
-Place all source videos inside:
+This RAG pipeline was built and tested using content from the following sources:
 
-```
-/videos
-```
+## **1️⃣ Primary Video Dataset (YouTube Playlist – First 18 Videos Only)**
 
----
+**Playlist:** *Code With Harry – Python Tutorials For Beginners*
+🔗 [https://youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w](https://youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w)
 
-## **Step 2: Convert Videos → MP3**
+Only the **first 18 videos** from this playlist were used for:
 
-```bash
-python video_to_mp3.py
-```
-
-This creates audio files under `/audios`.
-
----
-
-## **Step 3: Convert MP3 → Transcript JSON**
-
-```bash
-python mp3_to_json.py
-```
-
-Outputs structured transcripts under `/jsons`.
-
----
-
-## **Step 4: Build Vector Store (Embeddings)**
-
-```bash
-python preprocess_json.py
-```
-
-This script performs:
-
-* Text cleaning
-* Chunking
+* Video-to-Audio conversion
+* Transcription
 * Embedding generation
-* Saving embeddings to `embeddings.joblib`
+* RAG-based question answering
 
 ---
 
-## **Step 5: Query the RAG Assistant**
+## **2️⃣ Audio Files (Processed MP3s)**
 
-Example:
+All MP3 audio files extracted from the videos are stored here:
 
-```python
-import joblib
+🔗 **Google Drive Folder:**
+[https://drive.google.com/drive/folders/1QSnVSzPltlu5qk4ZF6W04pm-d5X6Z9Fs?usp=drive_link](https://drive.google.com/drive/folders/1QSnVSzPltlu5qk4ZF6W04pm-d5X6Z9Fs?usp=drive_link)
 
-df = joblib.load("embeddings.joblib")
-
-# Perform vector search + create prompt
-# Send prompt to your LLM API
-```
-
-Your assistant will answer questions strictly based on your video content.
-
+This folder contains the finalized MP3 files that were used for speech-to-text processing.
 ---
-
 ## 🧩 **System Architecture**
 
 ```
