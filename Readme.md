@@ -174,7 +174,7 @@ rag/
 
 * 🔗 LinkedIn: [https://linkedin.com/in/avinashzz](https://linkedin.com/in/avinashzz)
 * 🐙 GitHub: [https://github.com/avinash-kamble-9](https://github.com/avinash-kamble-9)
-* 📧 Email: [avinassh116zz@gmail.com](mailto:avinassh116zz@gmail.com)
+* 📧 Email: [avinash116zz@gmail.com](mailto:avinash116zz@gmail.com)
 
 ---
 
