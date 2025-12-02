@@ -144,9 +144,7 @@ If it's a video, this system can **understand, chunk, and answer from it**.
 ## 📁 **Project Structure**
 
 ```
-rag/
-│── videos/
-│── audios/
+rag-ai-study-assistant/
 │── jsons/
 │── embeddings.joblib
 │── video_to_mp3.py
@@ -162,7 +160,7 @@ rag/
 ## 👤 **Author**
 
 **Avinash Kamble**
-*AI/ML & Cloud Enthusiast*
+*AI/ML & Data Science Enthusiast*
 
 * 🔗 LinkedIn: [https://linkedin.com/in/avinashzz](https://linkedin.com/in/avinashzz)
 * 🐙 GitHub: [https://github.com/avinash-kamble-9](https://github.com/avinash-kamble-9)
