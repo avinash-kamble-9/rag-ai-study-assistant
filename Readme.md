@@ -5,6 +5,13 @@ A production-ready **Retrieval-Augmented Generation (RAG)** system that converts
 This project demonstrates a complete end-to-end pipeline for transforming video content into structured, queryable knowledge.
 
 ---
+## 🚀 **Live Demo**
+
+🎬 **Watch the Demo Video:**
+👉 [https://www.youtube.com/watch?v=Jck2tLjsFEA](https://www.youtube.com/watch?v=Jck2tLjsFEA)
+
+---
+
 
 ## 📌 **Overview**
 
@@ -172,3 +179,4 @@ rag-ai-study-assistant/
 * 📧 Email: [avinash116zz@gmail.com](mailto:avinash116zz@gmail.com)
 
 ---
+
