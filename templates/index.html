@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Study_Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Top Branding -->
+        <div class="top-bar">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" class="logo">
+            <div class="top-icons">
+                <span>🏠</span>
+                <span>🔽</span>
+                <span>📄</span>
+            </div>
+        </div>
+
+        <!-- Greeting Text -->
+        <div class="greeting">
+            <h1>Good morning, Avinash</h1>
+            <p>What can I help you with today?</p>
+        </div>
+
+        <!-- Search Box -->
+        <form method="POST" action="/ask">
+            <div class="search-box">
+                <input type="text" name="query" placeholder="Ask anything" required>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <!-- Response Display -->
+        {% if response %}
+        <div class="response-box">
+            <h3>LLM Response:</h3>
+            <p>{{ response }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
