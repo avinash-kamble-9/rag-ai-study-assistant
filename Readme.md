@@ -163,6 +163,9 @@ rag-ai-study-assistant/
 │── mp3_to_json.py
 │── preprocess_json.py
 │── process_incoming.py
+│── app.py
+│── static/style.css
+│── templates/index.html
 │── requirements.txt
 │── README.md
 ```
