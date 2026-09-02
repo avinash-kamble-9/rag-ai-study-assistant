@@ -171,15 +171,3 @@ rag-ai-study-assistant/
 ```
 
 ---
-
-## 👤 **Author**
-
-**Avinash Kamble**
-*AI/ML & Data Science Enthusiast*
-
-* 🔗 LinkedIn: [https://linkedin.com/in/avinashzz](https://linkedin.com/in/avinashzz)
-* 🐙 GitHub: [https://github.com/avinash-kamble-9](https://github.com/avinash-kamble-9)
-* 📧 Email: [avinash116zz@gmail.com](mailto:avinash116zz@gmail.com)
-
----
-
